@@ -23,6 +23,18 @@ class HuffmanEncodingTest(unittest.TestCase):
         self.assertEqual(self.__h.h_decoding("11001001011101"), "YADIRA")
         print(self.__h.h_decoding("11001001011101"))
 
+    def test_encode_string_same_characters(self):
+        self.__h.h_encoding("AAAAA")
+        self.assertEqual(self.__h.h_encoding("AAAAA"), "00000")
+        # Print "00000"
+        print(self.__h.h_encoding("AAAAA"))
+
+    def test_decode_string_same_characters(self):
+        self.__h.h_encoding("AAAAA")
+        self.assertEqual(self.__h.h_decoding("00000"), "AAAAA")
+        # Print "AAAAA"
+        print(self.__h.h_decoding("00000"))
+
     def test_encoding_empty(self):
         # if data y empty returns None
         self.assertIsNone(self.__h.h_encoding(""))
