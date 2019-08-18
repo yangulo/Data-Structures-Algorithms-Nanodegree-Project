@@ -5,23 +5,21 @@ from Project_2.problem_2.problem_2 import find_files
 class FindingFilesTest(unittest.TestCase):
     def setUp(self):
         # Input path and suffix
-        self.__path = "/Users/yangulo/Desktop/Udacity_Project2/testdir"
+        self.__path = "."
         self.__suffix = ".c"
 
     def test_finding_files(self):
         arr = find_files(self.__suffix, self.__path)
-        self.assertListEqual(arr, [
-            '/Users/yangulo/Desktop/Udacity_Project2/testdir/subdir3/subsubdir1/b.c',
-            '/Users/yangulo/Desktop/Udacity_Project2/testdir/t1.c',
-            '/Users/yangulo/Desktop/Udacity_Project2/testdir/subdir5/a.c',
-            '/Users/yangulo/Desktop/Udacity_Project2/testdir/subdir1/a.c'
-        ])
+        print(arr)
+        self.assertListEqual(arr, ['./testdir/subdir3/subsubdir1/b.c', './testdir/t1.c', './testdir/subdir5/a.c',
+                                   './testdir/subdir1/a.c']
+                             )
 
         # Output
-        # '/Users/yangulo/Desktop/Udacity_Project2/testdir/subdir3/subsubdir1/b.c',
-        # '/Users/yangulo/Desktop/Udacity_Project2/testdir/t1.c',
-        # '/Users/yangulo/Desktop/Udacity_Project2/testdir/subdir5/a.c',
-        # '/Users/yangulo/Desktop/Udacity_Project2/testdir/subdir1/a.c'
+        # ./ testdir / subdir3 / subsubdir1 / b.c
+        # ./ testdir / t1.c
+        # ./ testdir / subdir5 / a.c
+        # ./ testdir / subdir1 / a.c
         for element in arr:
             print(element)
 
