@@ -6,7 +6,7 @@
     on either union or intersection functions. An array can be also used on this problem to store the joined two 
     linked lists or the intersection values. However, due to it flexible storage in memory I decided to used same 
     linked list class created on problem one.
-    * **Time and Space Efficiency:**
+* **Time and Space Efficiency:**
     * As mentioned before, searching, inserting and deleting time efficiency is O(n) on a linked list but pre-append 
     (at the top) and append (at the tail) are fast operations with constant time O(1). On this problem an empty 
     linked list is created to storage (appending at the tail) each element by joining two linked lists or by selecting 
