@@ -6,27 +6,41 @@ class HuffmanEncodingTest(unittest.TestCase):
     def setUp(self):
         self.__h = HuffmanEncoding()
 
-    def test_encoding_decoding(self):
-        # Encodes "Yadira" to binary as "11001001011101"
+    def test_encoding(self):
         self.assertEqual(self.__h.h_encoding("Yadira"), "11001001011101")
+        self.assertEqual(self.__h.h_encoding("Gato"), "10110001")
+        self.assertEqual(self.__h.h_encoding("House"), "010011011110")
+        # Encodes "Yadira" to binary as "11001001011101"
         print(self.__h.h_encoding("Yadira"))
+        # Encodes "Gato" to binary as "10110001"
+        print(self.__h.h_encoding("Gato"))
+        # Encodes "House" to binary as "010011011110"
+        print(self.__h.h_encoding("House"))
 
-        # Decodes binary "11001001011101" as "YADIRA"
+    def test_decoding(self):
+        # Decodes binary "11001001011101" to YADIRA
+        self.__h.h_encoding("YADIRA")
         self.assertEqual(self.__h.h_decoding("11001001011101"), "YADIRA")
         print(self.__h.h_decoding("11001001011101"))
 
-    def test_encoding_decoding_empty(self):
+    def test_encoding_empty(self):
         # if data y empty returns None
         self.assertIsNone(self.__h.h_encoding(""))
-        self.assertIsNone(self.__h.h_decoding(""))
         print(self.__h.h_encoding(""))
+
+    def test_decoding_empty(self):
+        # if data y empty returns None
+        self.assertIsNone(self.__h.h_decoding(""))
         print(self.__h.h_decoding(""))
 
-    def test_encoding_decoding_node(self):
+    def test_encoding_node(self):
         # if data is None returns None
         self.assertIsNone(self.__h.h_encoding(None))
-        self.assertIsNone(self.__h.h_decoding(None))
         print(self.__h.h_encoding(None))
+
+    def test_decoding_node(self):
+        # if data is None returns None
+        self.assertIsNone(self.__h.h_decoding(None))
         print(self.__h.h_decoding(None))
 
 

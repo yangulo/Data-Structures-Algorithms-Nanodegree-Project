@@ -7,6 +7,9 @@ class Blockchain:
         self.__dll = DoubleLinkedList()
         self.__last_block = None
 
+    def is_empty(self):
+        return self.__dll.size() == 0
+
     def add_element(self, data):
         # Data is None
         if data is None or len(data) == 0:
