@@ -144,11 +144,12 @@ class DoubleLinkedList:
     # Remove tail node and return it
     def pop_tail(self):
         # Case 1 remove tail
-        if self.tail is not None and self.number_elements >= 0: ##
+        if self.tail is not None and self.number_elements >= 0:
+            value_removed = self.tail
             self.tail = self.tail.previous_value
             self.tail.next_value = None
             self.number_elements -= 1
-            return True
+            return value_removed
         # Case 2 do nothing, tail is none
         else:
             return False

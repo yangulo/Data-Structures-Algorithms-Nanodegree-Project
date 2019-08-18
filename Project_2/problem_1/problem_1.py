@@ -17,6 +17,8 @@ class LRUCache(object):
 
     # Get item, and add it at the top of the linkedlist as most recent used
     def get(self, key):
+        if self.capacity == 0:
+            return -1
         if key is None:
             return False
         # Retrieve item from provided key. Return -1 if nonexistent.
@@ -32,6 +34,8 @@ class LRUCache(object):
 
     # Add a value
     def set(self, key, value):
+        if self.capacity == 0:
+            return "Can't perform operations on 0 capacity cache"
         if key is None or value is None:
             return False
         # Set the value if the key is not present in the problem_1. If the problem_1 is at capacity
@@ -53,10 +57,11 @@ class LRUCache(object):
             self.number_elements += 1
             return True
 
-        # Case 2 need to remove an element cause the problem_1 is full
+        # Case 2 need to remove an element cause the cache is full
         else:
             value_removed = self.__dll.pop_tail()
             self.__has_map.remove_element(value_removed.key)
             self.number_elements -= 1
             return self.set(key, value)
+
 

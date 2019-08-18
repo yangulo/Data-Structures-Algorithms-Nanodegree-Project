@@ -71,7 +71,7 @@ class HashMap:
         if key is None:
             return False
         # (prime * key/2^(w-m)) % num_entries (Refer Wikipedia)
-        #hv = ((self.prime * key) / 2 ^ 4) % len(self.bucket)
+        # hv = ((self.prime * key) / 2 ^ 4) % len(self.bucket)
         return hash(key) % len(self.bucket)
 
 
