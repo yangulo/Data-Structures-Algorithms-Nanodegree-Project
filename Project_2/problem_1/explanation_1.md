@@ -4,7 +4,7 @@
     * A double Linked List will have the most-recently used item at the head of the list and the least-recently used 
     item at the tail. 
     * A Has Map; It will organize data so values can be quickly looked up given a unique key.
-    * _LRU Logic:_ A cache is just fast storage. So its size is limited, for this project the max capacity is 5 
+    * **LRU Logic:** A cache is just fast storage. So its size is limited, for this project the max capacity is 5 
     elements. When the capacity is reached the LRU element is removed from the double linked list by removing the 
     element at the tail, and remove the same element from the hash map. This frees space on the cache and the a new 
     most recently used element could be added at the top of the list and also on the hash map. When requesting (get) 
